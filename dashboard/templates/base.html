@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Dashboard ALBO VMI{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('lista') }}">ALBO VMI — Dashboard</a>
+    <nav class="topbar-nav">
+      <a href="{{ url_for('lista') }}">Agenti</a>
+      <a href="{{ url_for('nazionale_lista') }}">Lista Nazionale</a>
+    </nav>
+    <form class="topbar-actions" action="{{ url_for('genera_sito') }}" method="post">
+      <input type="hidden" name="torna_a" value="{{ request.path }}">
+      <button type="submit" class="btn btn-ghost">Genera sito</button>
+    </form>
+    <a class="btn btn-ghost" href="{{ url_for('anteprima') }}" target="_blank" rel="noopener">Anteprima</a>
+    <form class="topbar-actions" action="{{ url_for('pubblica') }}" method="post">
+      <button type="submit" class="btn btn-ghost">Pubblica</button>
+    </form>
+  </header>
+
+  {% set msg = request.args.get('msg') %}
+  {% if msg %}
+  <div class="flash{% if msg == 'genera-sito-errore' %} flash-errore{% endif %}">
+    {% if msg == 'genera-sito-ok' %}Sito generato con successo. Premi "Anteprima" per vederlo.
+    {% elif msg == 'genera-sito-errore' %}Errore durante la generazione del sito — controlla il terminale.
+    {% elif msg == 'pubblica-todo' %}"Pubblica" arriverà nella Fase 8 — non ancora collegato.
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

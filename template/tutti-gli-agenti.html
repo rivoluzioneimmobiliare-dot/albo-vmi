@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Tutti gli agenti — ALBO VIDEO AGENTI IMMOBILIARI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header site-header-statico">
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="privacy.html">Policy e Privacy</a>
+    </nav>
+  </header>
+
+  <main class="lista-main">
+    <h1>Video Agenti Immobiliari in Italia</h1>
+    <p class="lista-intro">{{ totale }} agenti in tutta Italia, divisi per regione. Clicca su una regione per aprirla.</p>
+
+    <div class="lista-accordion">
+      {% for regione, voci in regioni %}
+      <details class="lista-tendina">
+        <summary>
+          <span class="lista-tendina-nome">{{ regione }}</span>
+          <span class="lista-tendina-conteggio">{{ voci|length }}</span>
+        </summary>
+        <div class="lista-righe">
+          {% for v in voci %}
+          {% if v.sito %}
+          <a class="lista-riga" href="{{ v.sito }}" target="_blank" rel="noopener">
+            <span class="lista-riga-nome">{{ v.nome }}</span>
+            <span class="lista-riga-agenzia">{{ v.agenzia }}</span>
+            <span class="lista-riga-citta">{{ v.citta }}</span>
+          </a>
+          {% elif v.profilo_url %}
+          <a class="lista-riga" href="{{ v.profilo_url }}">
+            <span class="lista-riga-nome">{{ v.nome }}</span>
+            <span class="lista-riga-agenzia">{{ v.agenzia }}</span>
+            <span class="lista-riga-citta">{{ v.citta }}</span>
+          </a>
+          {% else %}
+          <div class="lista-riga lista-riga-statica">
+            <span class="lista-riga-nome">{{ v.nome }}</span>
+            <span class="lista-riga-agenzia">{{ v.agenzia }}</span>
+            <span class="lista-riga-citta">{{ v.citta }}</span>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-logo"><img src="vendor/logo.webp" alt="Albo Video Agenti Immobiliari"></div>
+    <div class="footer-copy">© {{ anno }} ALBO VIDEO AGENTI IMMOBILIARI — Tutti i diritti riservati.</div>
+  </footer>
+</body>
+</html>

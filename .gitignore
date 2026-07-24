@@ -1,0 +1,7 @@
+data/foto_raw/
+data/foto_tmp/
+data/.foto_webp_cache/
+data/logo/
+__pycache__/
+*.pyc
+.DS_Store

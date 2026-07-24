@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Lista Nazionale — Dashboard ALBO VMI{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Lista Nazionale ({{ totale }})</h1>
+    <a class="btn btn-primary" href="{{ url_for('nazionale_nuovo') }}">+ Nuovo nominativo</a>
+  </div>
+  <p class="hint">Questi sono i nominativi mostrati nella pagina "Cerca il tuo video agente di zona" del sito — senza pagina profilo propria, solo nome/agenzia/città e link al sito dell'agenzia.</p>
+
+  <table class="tabella-nazionale">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Agenzia</th>
+        <th>Città</th>
+        <th>Regione</th>
+        <th>Sito</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in lista %}
+      <tr>
+        <td>{{ v.nome }}</td>
+        <td>{{ v.agenzia }}</td>
+        <td>{{ v.citta }}</td>
+        <td>{{ v.regione }}</td>
+        <td>
+          {% if v.sito %}<a href="{{ v.sito }}" target="_blank" rel="noopener" class="link-sito">{{ v.sito }}</a>{% else %}<span class="hint">—</span>{% endif %}
+        </td>
+        <td class="col-azioni">
+          <a href="{{ url_for('nazionale_modifica', voce_id=v.id) }}">Modifica</a>
+          <span class="elimina-wrap" data-nome="{{ v.nome }}">
+            <a href="#" class="link-danger btn-elimina-avvia">Elimina</a>
+            <span class="conferma-elimina" hidden>
+              Eliminare {{ v.nome }}?
+              <form action="{{ url_for('nazionale_elimina', voce_id=v.id) }}" method="post" style="display:inline">
+                <button type="submit" class="link-danger">Sì, elimina</button>
+              </form>
+              <a href="#" class="btn-elimina-annulla">Annulla</a>
+            </span>
+          </span>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6">Nessun nominativo ancora.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script>
+    document.querySelectorAll('.btn-elimina-avvia').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const wrap = link.closest('.elimina-wrap');
+        link.hidden = true;
+        wrap.querySelector('.conferma-elimina').hidden = false;
+      });
+    });
+    document.querySelectorAll('.btn-elimina-annulla').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const wrap = link.closest('.elimina-wrap');
+        wrap.querySelector('.conferma-elimina').hidden = true;
+        wrap.querySelector('.btn-elimina-avvia').hidden = false;
+      });
+    });
+  </script>
+{% endblock %}

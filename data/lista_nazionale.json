@@ -1,0 +1,538 @@
+[
+  {
+    "id": "maria-d-angelo",
+    "regione": "Abruzzo",
+    "nome": "Maria D'Angelo",
+    "agenzia": "Mda",
+    "citta": "Martinsicuro",
+    "sito": "https://www.mdaimmobiliare.it/"
+  },
+  {
+    "id": "roberta-lo-popolo",
+    "regione": "Abruzzo",
+    "nome": "Roberta Lo Popolo",
+    "agenzia": "Realizza Casa",
+    "citta": "Pescara",
+    "sito": "https://www.realizzacasa.it/"
+  },
+  {
+    "id": "paolo-marcigliano",
+    "regione": "Emilia Romagna",
+    "nome": "Paolo Marcigliano",
+    "agenzia": "Vitali Immobiliare",
+    "citta": "Cesena",
+    "sito": "https://www.vitalimmobiliare.it/"
+  },
+  {
+    "id": "marco-altimani",
+    "regione": "Emilia Romagna",
+    "nome": "Marco Altimani",
+    "agenzia": "Correggio Casa",
+    "citta": "Coreggio",
+    "sito": "https://www.amcorreggiocasa.it/"
+  },
+  {
+    "id": "viola-stacchi",
+    "regione": "Emilia Romagna",
+    "nome": "Viola Stacchi",
+    "agenzia": "Casa Idea",
+    "citta": "Colorno",
+    "sito": "https://www.casaideasnc.it/"
+  },
+  {
+    "id": "loretta-agnelli",
+    "regione": "Emilia Romagna",
+    "nome": "Loretta Agnelli",
+    "agenzia": "Trading Casa",
+    "citta": "Piacenza",
+    "sito": "https://www.tradingcasa.com/"
+  },
+  {
+    "id": "paola-scarica",
+    "regione": "Emilia Romagna",
+    "nome": "Paola Scarica",
+    "agenzia": "Piccola Agenzia",
+    "citta": "Parma",
+    "sito": "https://www.piccolagenzia.it/"
+  },
+  {
+    "id": "alberto-berardi",
+    "regione": "Emilia Romagna",
+    "nome": "Alberto Berardi",
+    "agenzia": "Abita Casa",
+    "citta": "San Mauro Pascoli",
+    "sito": "https://www.abitacasa.it/"
+  },
+  {
+    "id": "alessandro-basini",
+    "regione": "Emilia Romagna",
+    "nome": "Alessandro Basini",
+    "agenzia": "Immobiliare Fiore",
+    "citta": "Fiorenzuola D'Arda",
+    "sito": "https://www.immobiliarefiore.it/"
+  },
+  {
+    "id": "lorenzo-poggi",
+    "regione": "Emilia Romagna",
+    "nome": "Lorenzo Poggi",
+    "agenzia": "San Matteo Immobiliare",
+    "citta": "San Matteo della Decima-Bologna",
+    "sito": "https://immobiliaresanmatteo.it/it/"
+  },
+  {
+    "id": "barbara-costa",
+    "regione": "Emilia Romagna",
+    "nome": "Barbara Costa",
+    "agenzia": "Minarini Immobiliare",
+    "citta": "Imola",
+    "sito": "https://www.minariniimmobiliare.it/"
+  },
+  {
+    "id": "davide-toffi",
+    "regione": "Emilia Romagna",
+    "nome": "Davide Toffi",
+    "agenzia": "Progetto Casa",
+    "citta": "Bibbiano",
+    "sito": "http://www.progettocasa-re.it/"
+  },
+  {
+    "id": "alessandro-rizzoli",
+    "regione": "Friuli Venezia Giulia",
+    "nome": "Alessandro Rizzoli",
+    "agenzia": "Moratti e Rizzoli",
+    "citta": "Cervignano",
+    "sito": "https://morattierizzoli.it/"
+  },
+  {
+    "id": "daniele-patassini",
+    "regione": "Lazio",
+    "nome": "Daniele Patassini",
+    "agenzia": "Dp Immobiliare",
+    "citta": "Roma",
+    "sito": "https://www.dpimmobiliare.net/"
+  },
+  {
+    "id": "stefano-cacciatore",
+    "regione": "Lazio",
+    "nome": "Stefano Cacciatore",
+    "agenzia": "Grimaldi Appio",
+    "citta": "Roma",
+    "sito": "https://www.grimaldiappio.it/"
+  },
+  {
+    "id": "armando-sacco",
+    "regione": "Lazio",
+    "nome": "Armando Sacco",
+    "agenzia": "Sacco Real Estate",
+    "citta": "Roma",
+    "sito": "https://www.sacco-realestate.com/"
+  },
+  {
+    "id": "simone-del-fiore",
+    "regione": "Lazio",
+    "nome": "Simone del Fiore",
+    "agenzia": "La Navicella",
+    "citta": "Roma",
+    "sito": "https://www.lanavicella.it/web/"
+  },
+  {
+    "id": "cristina-bastioli",
+    "regione": "Lazio",
+    "nome": "Cristina Bastioli",
+    "agenzia": "Cristina Bastioli",
+    "citta": "Roma",
+    "sito": "https://www.cristinabastioli.it/"
+  },
+  {
+    "id": "julia-baracchini",
+    "regione": "Liguria",
+    "nome": "Julia Baracchini",
+    "agenzia": "Immobiliare Casa 2.0",
+    "citta": "La Spezia",
+    "sito": "https://www.casa20.net/web/"
+  },
+  {
+    "id": "elena-rughetto",
+    "regione": "Lombardia",
+    "nome": "Elena Rughetto",
+    "agenzia": "Elena Rughetto Comp. Imm.",
+    "citta": "Merate",
+    "sito": "https://www.elenarughetto.com/"
+  },
+  {
+    "id": "marco-di-stefano",
+    "regione": "Lombardia",
+    "nome": "Marco di Stefano",
+    "agenzia": "Dst Immobiliare",
+    "citta": "Milano",
+    "sito": "http://www.immobiliaredst.it/"
+  },
+  {
+    "id": "alberto-maroni",
+    "regione": "Lombardia",
+    "nome": "Alberto Maroni",
+    "agenzia": "Nuova Immobiliare San Marco",
+    "citta": "Milano",
+    "sito": "https://nuovaimmobiliaresanmarco.it/"
+  },
+  {
+    "id": "andrea-loreto",
+    "regione": "Lombardia",
+    "nome": "Andrea Loreto",
+    "agenzia": "Loreto Casa",
+    "citta": "Cassano Magnago",
+    "sito": "https://www.loretocasa.it/index.php"
+  },
+  {
+    "id": "danila-formiatti",
+    "regione": "Lombardia",
+    "nome": "Danila Formiatti",
+    "agenzia": "Idea Casa",
+    "citta": "Sondrio",
+    "sito": "https://www.ideacasaimmobiliare.it/web/"
+  },
+  {
+    "id": "maurizio-toia",
+    "regione": "Lombardia",
+    "nome": "Maurizio Toia",
+    "agenzia": "Evo Casa",
+    "citta": "Magnago e Busto Arsizio",
+    "sito": "https://evo-casa.it/it/"
+  },
+  {
+    "id": "boni-marzio-michele",
+    "regione": "Lombardia",
+    "nome": "Boni Marzio Michele",
+    "agenzia": "Boni Marzio Michele D.i.",
+    "citta": "Milano-Lecco-Brianza",
+    "sito": "https://www.bonire.it/"
+  },
+  {
+    "id": "flavia-bognandi",
+    "regione": "Lombardia",
+    "nome": "Flavia Bognandi",
+    "agenzia": "Jivan Home Experience",
+    "citta": "Milano",
+    "sito": "https://back.rivoluzioneimmobiliare.it/pages/alboagenti-form-b2c"
+  },
+  {
+    "id": "catia-de-angelis",
+    "regione": "Marche",
+    "nome": "Catia de Angelis",
+    "agenzia": "Esclusiva",
+    "citta": "Castelfidardo",
+    "sito": "https://www.esclusivaimmobiliare.com/home"
+  },
+  {
+    "id": "stefano-pallotti",
+    "regione": "Marche",
+    "nome": "Stefano Pallotti",
+    "agenzia": "Alkadia",
+    "citta": "Porto San Giorgio",
+    "sito": "https://www.alkadiaimmobiliare.it/"
+  },
+  {
+    "id": "sergio-carano",
+    "regione": "Piemonte",
+    "nome": "Sergio Carano",
+    "agenzia": "Comi Casa",
+    "citta": "Novi Ligure",
+    "sito": "https://www.comicasa.it/"
+  },
+  {
+    "id": "gianluca-ciraci",
+    "regione": "Piemonte",
+    "nome": "Gianluca Ciraci",
+    "agenzia": "Better Immobiliare",
+    "citta": "Avigliana",
+    "sito": "https://www.betterimmobiliare.it/"
+  },
+  {
+    "id": "laura-zanin",
+    "regione": "Piemonte",
+    "nome": "Laura Zanin",
+    "agenzia": "Immobiliare Dove Abitare",
+    "citta": "Pinerolo",
+    "sito": "https://immobiliaredoveabitare.it/it/chi-siamo.html"
+  },
+  {
+    "id": "nicola-salerno",
+    "regione": "Piemonte",
+    "nome": "Nicola Salerno",
+    "agenzia": "Salerno Group",
+    "citta": "Torino",
+    "sito": "https://www.immobiliaresalerno.it/"
+  },
+  {
+    "id": "piero-de-mola",
+    "regione": "Puglia",
+    "nome": "Piero de Mola",
+    "agenzia": "Agenzia Your House Property Solutions",
+    "citta": "Polignano a Mare",
+    "sito": "https://yourhousepuglia.com/"
+  },
+  {
+    "id": "eugenio-forcelli",
+    "regione": "Puglia",
+    "nome": "Eugenio Forcelli",
+    "agenzia": "Centro Casa",
+    "citta": "Lucera",
+    "sito": "http://www.centrocasalucera.it/"
+  },
+  {
+    "id": "gianni-porcelli",
+    "regione": "Puglia",
+    "nome": "Gianni Porcelli",
+    "agenzia": "Rete Casa",
+    "citta": "Bisceglie",
+    "sito": "http://www.retecasabisceglie.it/"
+  },
+  {
+    "id": "francesco-arcieri",
+    "regione": "Puglia",
+    "nome": "Francesco Arcieri",
+    "agenzia": "Arcieri Immobiliare",
+    "citta": "Cerignola",
+    "sito": "http://arcierimmobiliare.it/it/"
+  },
+  {
+    "id": "cristiana-de-maria",
+    "regione": "Sardegna",
+    "nome": "Cristiana de Maria",
+    "agenzia": "Sinergie Immobiliari 4.0",
+    "citta": "Cagliari",
+    "sito": "https://sinergieimmobiliarisardegna.it/"
+  },
+  {
+    "id": "simona-conti",
+    "regione": "Sicilia",
+    "nome": "Simona Conti",
+    "agenzia": "Recasi",
+    "citta": "Augusta",
+    "sito": "https://www.recasimmobiliare.it/agenzia-immobiliare/index.php"
+  },
+  {
+    "id": "rosario-spampinato",
+    "regione": "Sicilia",
+    "nome": "Rosario Spampinato",
+    "agenzia": "Casa Center",
+    "citta": "Catania",
+    "sito": "https://www.casacenter.it/web/"
+  },
+  {
+    "id": "g-bruno-la-barbera",
+    "regione": "Sicilia",
+    "nome": "G. Bruno La Barbera",
+    "agenzia": "Vale Immobiliare",
+    "citta": "Palermo",
+    "sito": "https://immobiliarevale.it/"
+  },
+  {
+    "id": "daniele-fallo",
+    "regione": "Sicilia",
+    "nome": "Daniele Fallo",
+    "agenzia": "Innova Casa Messina",
+    "citta": "Messina",
+    "sito": "https://www.mlsagentre.it/sito/45329/"
+  },
+  {
+    "id": "annarita-chilosi",
+    "regione": "Toscana",
+    "nome": "Annarita Chilosi",
+    "agenzia": "Immobiliare Grandi Costruzioni",
+    "citta": "Viareggio",
+    "sito": "https://www.immobiliaregrandicostruzioni.it/"
+  },
+  {
+    "id": "linda-giorgianni",
+    "regione": "Toscana",
+    "nome": "Linda Giorgianni",
+    "agenzia": "Il Gioiello",
+    "citta": "Venturina T.",
+    "sito": "https://www.toscanacase.eu/"
+  },
+  {
+    "id": "gaia-matriciani",
+    "regione": "Toscana",
+    "nome": "Gaia Matriciani",
+    "agenzia": "Immobiliare Matriciani",
+    "citta": "San Vincenzo",
+    "sito": "https://www.immobiliarematriciani.it/"
+  },
+  {
+    "id": "rosanna-marini",
+    "regione": "Toscana",
+    "nome": "Rosanna Marini",
+    "agenzia": "Tuscan Homes",
+    "citta": "Barga",
+    "sito": "https://www.tuscanhomes.com/public/it/"
+  },
+  {
+    "id": "federico-cardellini",
+    "regione": "Toscana",
+    "nome": "Federico Cardellini",
+    "agenzia": "Cardellini",
+    "citta": "Fivizzano",
+    "sito": "https://www.immobiliarecardellini.com/"
+  },
+  {
+    "id": "luca-batistoni",
+    "regione": "Toscana",
+    "nome": "Luca Batistoni",
+    "agenzia": "Mr Open House",
+    "citta": "Empoli",
+    "sito": "https://www.misteropenhouse.com/"
+  },
+  {
+    "id": "leonardo-barsotti",
+    "regione": "Toscana",
+    "nome": "Leonardo Barsotti",
+    "agenzia": "Selezione Casa",
+    "citta": "Santa Maria a Monte",
+    "sito": "https://www.selezionecasa.it/"
+  },
+  {
+    "id": "claudio-fatighenti",
+    "regione": "Toscana",
+    "nome": "Claudio Fatighenti",
+    "agenzia": "Toscanamare",
+    "citta": "Cecina e Marina di Castagneto",
+    "sito": "https://www.toscanamare.it/"
+  },
+  {
+    "id": "deborah-lupini",
+    "regione": "Toscana",
+    "nome": "Deborah Lupini",
+    "agenzia": "Deborah Lupini Real Estate",
+    "citta": "Bibbona",
+    "sito": "https://www.deborahlupini.com/"
+  },
+  {
+    "id": "matteo-novello",
+    "regione": "Trentino",
+    "nome": "Matteo Novello",
+    "agenzia": "Sbetta Novello",
+    "citta": "Borgo Valsugana",
+    "sito": "https://www.sbettaenovello.it/"
+  },
+  {
+    "id": "marco-nardelli",
+    "regione": "Trentino",
+    "nome": "Marco Nardelli",
+    "agenzia": "Arcobaleno",
+    "citta": "Trento",
+    "sito": "https://www.arcobalenosi.com/"
+  },
+  {
+    "id": "michele-breda",
+    "regione": "Veneto",
+    "nome": "Michele Breda",
+    "agenzia": "Unycasa",
+    "citta": "Mestrino",
+    "sito": "https://www.unycasamestrino.it/"
+  },
+  {
+    "id": "carmelita-morando",
+    "regione": "Veneto",
+    "nome": "Carmelita Morando",
+    "agenzia": "Tra Il Baldo e Il Garda",
+    "citta": "Caprino Veronese",
+    "sito": "https://www.carmelitamorando.it/"
+  },
+  {
+    "id": "juri-ceccon",
+    "regione": "Veneto",
+    "nome": "Juri Ceccon",
+    "agenzia": "La Meridiana",
+    "citta": "Vedelago",
+    "sito": "https://www.lameridianaimmobiliare.it/"
+  },
+  {
+    "id": "rodolfo-rota",
+    "regione": "Veneto",
+    "nome": "Rodolfo Rota",
+    "agenzia": "Belluno Immobiliare",
+    "citta": "Belluno",
+    "sito": "https://www.bellunoimmobiliare.it/"
+  },
+  {
+    "id": "silvia-pontello",
+    "regione": "Veneto",
+    "nome": "Silvia Pontello",
+    "agenzia": "Studio Sp",
+    "citta": "Auronzo di Cadore",
+    "sito": "https://www.studio-sp.it/"
+  },
+  {
+    "id": "lucia-soccol",
+    "regione": "Veneto",
+    "nome": "Lucia Soccol",
+    "agenzia": "Giemme Immobiliare",
+    "citta": "Agordo",
+    "sito": "https://www.giemmeagordo.com/"
+  },
+  {
+    "id": "piertomaso-de-nicolo",
+    "regione": "Veneto",
+    "nome": "Piertomaso de Nicolo'",
+    "agenzia": "House Service",
+    "citta": "Arabba",
+    "sito": "https://casearabba.it/"
+  },
+  {
+    "id": "carmine-giacin",
+    "regione": "Veneto",
+    "nome": "Carmine Giacin",
+    "agenzia": "Giacin Immobiliare",
+    "citta": "Pieve di Cadore",
+    "sito": "https://giacin.com/"
+  },
+  {
+    "id": "lorin-monica",
+    "regione": "Veneto",
+    "nome": "Lorin Monica",
+    "agenzia": "Agenzia di Affari Greggio",
+    "citta": "Belluno",
+    "sito": "https://www.agenziagreggio.it/"
+  },
+  {
+    "id": "ivan-damian",
+    "regione": "Veneto",
+    "nome": "Ivan Damian",
+    "agenzia": "Damian Immobiliare",
+    "citta": "Ponte Nelle Alpi",
+    "sito": "https://dolomitire.com/agents/20-ivan-damian"
+  },
+  {
+    "id": "bernardo-ghedin",
+    "regione": "Veneto",
+    "nome": "Bernardo Ghedin",
+    "agenzia": "Gb Real Estate Srl",
+    "citta": "Conegliano",
+    "sito": "https://www.immobiliareghedin.it/"
+  },
+  {
+    "id": "piermario-piolo",
+    "regione": "Veneto",
+    "nome": "Piermario Piolo",
+    "agenzia": "Piolo Piolo",
+    "citta": "Feltre",
+    "sito": "https://www.piolo.it/it/"
+  },
+  {
+    "id": "stefano-boscarato",
+    "regione": "Veneto",
+    "nome": "Stefano Boscarato",
+    "agenzia": "Case in Vendita Treviso",
+    "citta": "Treviso",
+    "sito": "https://www.caseinvenditatreviso.it/"
+  },
+  {
+    "id": "matteo-candelli",
+    "regione": "Veneto",
+    "nome": "Matteo Candelli",
+    "agenzia": "Arcobaleno",
+    "citta": "Este",
+    "sito": "https://www.arcobalenoimmobiliare.com/"
+  }
+]

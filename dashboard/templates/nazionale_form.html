@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{% if voce.id %}Modifica{% else %}Nuovo{% endif %} nominativo — Dashboard ALBO VMI{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>{% if voce.id %}Modifica nominativo{% else %}Nuovo nominativo{% endif %}</h1>
+    <a class="btn btn-ghost" href="{{ url_for('nazionale_lista') }}">&larr; Torna alla lista</a>
+  </div>
+
+  {% if errore %}<div class="flash flash-errore">{{ errore }}</div>{% endif %}
+
+  <form method="post" class="form-agente" style="max-width:560px">
+    <label>Nome
+      <input type="text" name="nome" value="{{ voce.nome or '' }}" required>
+    </label>
+
+    <label>Agenzia
+      <input type="text" name="agenzia" value="{{ voce.agenzia or '' }}">
+    </label>
+
+    <label>Città
+      <input type="text" name="citta" value="{{ voce.citta or '' }}">
+    </label>
+
+    <label>Regione
+      <input type="text" name="regione" value="{{ voce.regione or '' }}">
+    </label>
+
+    <label>Sito dell'agenzia
+      <input type="url" name="sito" value="{{ voce.sito or '' }}">
+    </label>
+
+    <button type="submit" class="btn btn-primary">Salva</button>
+  </form>
+{% endblock %}

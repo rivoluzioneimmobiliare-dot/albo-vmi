@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Agenti — Dashboard ALBO VMI{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Agenti ({{ totale }})</h1>
+    <a class="btn btn-primary" href="{{ url_for('nuovo') }}">+ Nuovo agente</a>
+  </div>
+
+  <div class="grid-agenti">
+    {% for a in agenti %}
+      <div class="card-agente">
+        <div class="agent-frame agent-frame-sm">
+          {% if a.fondatore %}<div class="badge-founder">FOUNDER</div>{% endif %}
+          <div class="filmstrip filmstrip-left"></div>
+          <div class="filmstrip filmstrip-right"></div>
+          {% if a.foto %}
+            <img src="{{ url_for('foto', filename=a.foto) }}" alt="{{ a.nome }}">
+          {% endif %}
+          <div class="banner">
+            <div class="banner-nome">{{ a.nome }}</div>
+            <div class="banner-sub">{{ a.agenzia }}{% if a.citta %} – {{ a.citta }}{% endif %}</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>Carosello: {{ a.carosello or "—" }} · Ordine: {{ a.ordine or "—" }}</div>
+          <div class="card-actions">
+            <a href="{{ url_for('modifica', agente_id=a.id) }}">Modifica</a>
+            <span class="elimina-wrap" data-nome="{{ a.nome }}">
+              <a href="#" class="link-danger btn-elimina-avvia">Elimina</a>
+              <span class="conferma-elimina" hidden>
+                Eliminare {{ a.nome }}?
+                <form action="{{ url_for('elimina', agente_id=a.id) }}" method="post" style="display:inline">
+                  <button type="submit" class="link-danger">Sì, elimina</button>
+                </form>
+                <a href="#" class="btn-elimina-annulla">Annulla</a>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <p>Nessun agente ancora. Aggiungine uno.</p>
+    {% endfor %}
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-elimina-avvia').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const wrap = link.closest('.elimina-wrap');
+        link.hidden = true;
+        wrap.querySelector('.conferma-elimina').hidden = false;
+      });
+    });
+    document.querySelectorAll('.btn-elimina-annulla').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const wrap = link.closest('.elimina-wrap');
+        wrap.querySelector('.conferma-elimina').hidden = true;
+        wrap.querySelector('.btn-elimina-avvia').hidden = false;
+      });
+    });
+  </script>
+{% endblock %}

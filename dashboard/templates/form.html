@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}{% if agente.id %}Modifica{% else %}Nuovo{% endif %} agente — Dashboard ALBO VMI{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>{% if agente.id %}Modifica agente{% else %}Nuovo agente{% endif %}</h1>
+    <a class="btn btn-ghost" href="{{ url_for('lista') }}">&larr; Torna alla lista</a>
+  </div>
+
+  {% if errore %}<div class="flash flash-errore">{{ errore }}</div>{% endif %}
+
+  <div class="form-layout">
+    <form method="post" enctype="multipart/form-data" class="form-agente">
+      <input type="hidden" name="foto_token" id="foto_token" value="">
+
+      <label>Foto
+        <input type="file" id="input_foto" accept="image/*">
+      </label>
+      <p class="hint" id="foto_status">Carica una foto: lo sfondo viene rimosso automaticamente.</p>
+
+      <label>Nome
+        <input type="text" name="nome" id="nome" value="{{ agente.nome or '' }}" required>
+      </label>
+
+      <label>Agenzia
+        <input type="text" name="agenzia" id="agenzia" value="{{ agente.agenzia or '' }}">
+      </label>
+
+      <label>Città
+        <input type="text" name="citta" id="citta" value="{{ agente.citta or '' }}">
+      </label>
+
+      <label class="switch-row">
+        <input type="checkbox" name="fondatore" id="fondatore" {% if agente.fondatore %}checked{% endif %}>
+        Fondatore (mostra il badge oro)
+      </label>
+
+      <div class="row-2">
+        <label>Carosello
+          <select name="carosello">
+            <option value="" {% if not agente.carosello %}selected{% endif %}>—</option>
+            <option value="1" {% if agente.carosello == 1 %}selected{% endif %}>1</option>
+            <option value="2" {% if agente.carosello == 2 %}selected{% endif %}>2</option>
+            <option value="3" {% if agente.carosello == 3 %}selected{% endif %}>3</option>
+          </select>
+        </label>
+        <label>Ordine
+          <input type="number" name="ordine" value="{{ agente.ordine or 0 }}">
+        </label>
+      </div>
+
+      <label>Bio
+        <textarea name="bio" rows="6">{{ agente.bio or '' }}</textarea>
+      </label>
+
+      <label>Telefono
+        <input type="text" name="telefono" value="{{ agente.telefono or '' }}">
+      </label>
+
+      <label>Email
+        <input type="email" name="email" value="{{ agente.email or '' }}">
+      </label>
+
+      <label>Sito
+        <input type="url" name="sito" value="{{ agente.sito or '' }}">
+      </label>
+
+      <fieldset>
+        <legend>Social (lascia vuoto quello che non vuoi mostrare)</legend>
+        {% for campo in ["facebook", "instagram", "youtube", "linkedin", "tiktok"] %}
+          <label>{{ campo|capitalize }}
+            <input type="url" name="social_{{ campo }}" value="{{ (agente.social or {}).get(campo, '') }}">
+          </label>
+        {% endfor %}
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary">Salva</button>
+    </form>
+
+    <aside class="preview-pane">
+      <p class="hint">Anteprima</p>
+      <div class="agent-frame" id="preview_frame">
+        <div class="badge-founder" id="preview_badge" style="display:{% if agente.fondatore %}block{% else %}none{% endif %};">FOUNDER</div>
+        <div class="filmstrip filmstrip-left"></div>
+        <div class="filmstrip filmstrip-right"></div>
+        <img id="preview_img" src="{% if agente.foto %}{{ url_for('foto', filename=agente.foto) }}{% endif %}"
+             style="display:{% if agente.foto %}block{% else %}none{% endif %};">
+        <div class="banner">
+          <div class="banner-nome" id="preview_nome">{{ agente.nome or 'Nome Cognome' }}</div>
+          <div class="banner-sub" id="preview_sub">{{ agente.agenzia or 'Agenzia' }}{% if agente.citta %} – {{ agente.citta }}{% endif %}</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const inputFoto = document.getElementById('input_foto');
+    const fotoToken = document.getElementById('foto_token');
+    const fotoStatus = document.getElementById('foto_status');
+    const previewImg = document.getElementById('preview_img');
+
+    inputFoto.addEventListener('change', async () => {
+      if (!inputFoto.files.length) return;
+      fotoStatus.textContent = 'Rimozione sfondo in corso...';
+      const data = new FormData();
+      data.append('foto', inputFoto.files[0]);
+      try {
+        const res = await fetch('{{ url_for("api_scontorno") }}', { method: 'POST', body: data });
+        const json = await res.json();
+        if (json.errore) {
+          fotoStatus.textContent = 'Errore: ' + json.errore;
+          return;
+        }
+        fotoToken.value = json.token;
+        previewImg.src = json.preview_url + '?t=' + Date.now();
+        previewImg.style.display = 'block';
+        fotoStatus.textContent = 'Foto pronta.';
+      } catch (e) {
+        fotoStatus.textContent = 'Errore di rete durante lo scontorno.';
+      }
+    });
+
+    document.getElementById('nome').addEventListener('input', e => {
+      document.getElementById('preview_nome').textContent = e.target.value || 'Nome Cognome';
+    });
+    function aggiornaSub() {
+      const ag = document.getElementById('agenzia').value;
+      const ci = document.getElementById('citta').value;
+      document.getElementById('preview_sub').textContent = ci ? (ag + ' – ' + ci) : ag;
+    }
+    document.getElementById('agenzia').addEventListener('input', aggiornaSub);
+    document.getElementById('citta').addEventListener('input', aggiornaSub);
+    document.getElementById('fondatore').addEventListener('change', e => {
+      document.getElementById('preview_badge').style.display = e.target.checked ? 'block' : 'none';
+    });
+  </script>
+{% endblock %}
