@@ -137,11 +137,12 @@ def copia_assets():
         shutil.copytree(vendor_src, vendor_dst, dirs_exist_ok=True)
 
 
-def genera_home(env, agenti):
+def genera_home(env, agenti, totale_nazionale):
     template = env.get_template("home.html")
     html = template.render(
         caroselli=raggruppa_caroselli(agenti),
         anno=datetime.date.today().year,
+        totale_nazionale=totale_nazionale,
     )
     (SITE_DIR / "index.html").write_text(html, encoding="utf-8")
 
@@ -155,8 +156,7 @@ def genera_profili(env, agenti):
         (agenti_dst / f"{a['id']}.html").write_text(html, encoding="utf-8")
 
 
-def genera_lista_nazionale(env, anno, agenti):
-    lista = load_lista_nazionale()
+def genera_lista_nazionale(env, anno, agenti, lista):
     if not lista:
         return
     lista = collega_profili(lista, agenti)
@@ -174,13 +174,14 @@ def genera_pagine_statiche(env, anno):
 
 def main():
     agenti = load_agenti()
+    lista_nazionale = load_lista_nazionale()
     anno = datetime.date.today().year
     pulisci_site_dir()
     copia_assets()
     env = Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)))
-    genera_home(env, agenti)
+    genera_home(env, agenti, len(lista_nazionale))
     genera_profili(env, agenti)
-    genera_lista_nazionale(env, anno, agenti)
+    genera_lista_nazionale(env, anno, agenti, lista_nazionale)
     genera_pagine_statiche(env, anno)
     print(f"Sito generato in {SITE_DIR} ({len(agenti)} agenti, {len(agenti)} pagine profilo)")
 
