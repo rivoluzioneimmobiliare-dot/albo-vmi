@@ -19,16 +19,19 @@
     </form>
     <a class="btn btn-ghost" href="{{ url_for('anteprima') }}" target="_blank" rel="noopener">Anteprima</a>
     <form class="topbar-actions" action="{{ url_for('pubblica') }}" method="post">
-      <button type="submit" class="btn btn-ghost">Pubblica</button>
+      <input type="hidden" name="torna_a" value="{{ request.path }}">
+      <button type="submit" class="btn btn-primary">Pubblica</button>
     </form>
   </header>
 
   {% set msg = request.args.get('msg') %}
   {% if msg %}
-  <div class="flash{% if msg == 'genera-sito-errore' %} flash-errore{% endif %}">
+  <div class="flash{% if msg in ('genera-sito-errore', 'pubblica-errore') %} flash-errore{% endif %}">
     {% if msg == 'genera-sito-ok' %}Sito generato con successo. Premi "Anteprima" per vederlo.
     {% elif msg == 'genera-sito-errore' %}Errore durante la generazione del sito — controlla il terminale.
-    {% elif msg == 'pubblica-todo' %}"Pubblica" arriverà nella Fase 8 — non ancora collegato.
+    {% elif msg == 'pubblica-ok' %}Pubblicato online. Il sito si aggiorna su Render entro 1-2 minuti.
+    {% elif msg == 'pubblica-nulla' %}Nessuna modifica da pubblicare — genera prima il sito se hai cambiato dei dati.
+    {% elif msg == 'pubblica-errore' %}Errore durante la pubblicazione — controlla il terminale.
     {% endif %}
   </div>
   {% endif %}

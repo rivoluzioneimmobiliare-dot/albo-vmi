@@ -1,3 +1,4 @@
+import datetime
 import json
 import re
 import shutil
@@ -291,7 +292,37 @@ def anteprima(filename="index.html"):
 
 @app.route("/pubblica", methods=["POST"])
 def pubblica():
-    return redirect(url_for("lista", msg="pubblica-todo"))
+    torna_a = request.form.get("torna_a") or url_for("lista")
+
+    stato = subprocess.run(
+        ["git", "status", "--porcelain"], cwd=str(BASE_DIR), capture_output=True, text=True
+    )
+    if not stato.stdout.strip():
+        return redirect(f"{torna_a}?msg=pubblica-nulla")
+
+    subprocess.run(["git", "add", "-A"], cwd=str(BASE_DIR), capture_output=True, text=True)
+
+    commit = subprocess.run(
+        [
+            "git", "commit", "-m",
+            f"Aggiornamento dati e sito dalla dashboard — {datetime.date.today().isoformat()}",
+        ],
+        cwd=str(BASE_DIR),
+        capture_output=True,
+        text=True,
+    )
+    if commit.returncode != 0:
+        print(commit.stdout)
+        print(commit.stderr)
+        return redirect(f"{torna_a}?msg=pubblica-errore")
+
+    push = subprocess.run(["git", "push"], cwd=str(BASE_DIR), capture_output=True, text=True)
+    if push.returncode != 0:
+        print(push.stdout)
+        print(push.stderr)
+        return redirect(f"{torna_a}?msg=pubblica-errore")
+
+    return redirect(f"{torna_a}?msg=pubblica-ok")
 
 
 def _apri_browser():
